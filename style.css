@@ -1,5 +1,10 @@
+/* ------------------------------------------ */
+/* Main Page */
+/* ------------------------------------------ */
+
 body {
   font-family: Arial, sans-serif;
+
   margin: 0;
 
   background: #1b1b1b;
@@ -11,6 +16,7 @@ body {
   max-width: 600px;
 
   margin: 0 auto;
+
   padding: 20px;
 }
 
@@ -47,9 +53,14 @@ h1 {
   margin: 0;
 
   background: transparent;
+
   color: #aaaaaa;
 
   border: 1px solid transparent;
+
+  padding: 10px 8px;
+
+  font-size: 14px;
 }
 
 
@@ -76,6 +87,113 @@ h1 {
 
 .hidden-view {
   display: none;
+}
+
+
+/* ------------------------------------------ */
+/* Overall Monthly Budget */
+/* ------------------------------------------ */
+
+.overall-budget-card {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  margin-bottom: 16px;
+}
+
+
+.overall-budget-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+
+.overall-budget-label {
+  margin: 0 0 6px;
+
+  color: #aaaaaa;
+
+  font-size: 14px;
+}
+
+
+.overall-budget-amount {
+  margin: 0;
+
+  color: #f2f2f2;
+
+  font-size: 26px;
+
+  font-weight: bold;
+}
+
+
+.overall-budget-details {
+  margin-top: 18px;
+
+  color: #bbbbbb;
+
+  line-height: 1.6;
+}
+
+
+.overall-progress-track {
+  width: 100%;
+
+  height: 12px;
+
+  margin-top: 14px;
+
+  overflow: hidden;
+
+  background: #1e1e1e;
+
+  border-radius: 999px;
+}
+
+
+.overall-progress-bar {
+  width: 0%;
+
+  height: 100%;
+
+  background: #ff8c32;
+
+  border-radius: 999px;
+
+  transition: width 0.2s ease;
+}
+
+
+.small-action-button {
+  width: auto;
+
+  margin: 0;
+
+  padding: 8px 12px;
+
+  font-size: 13px;
+
+  background: #444444;
+
+  color: #ffffff;
+
+  border: 1px solid #555555;
+}
+
+
+.small-action-button:hover {
+  background: #555555;
 }
 
 
@@ -119,6 +237,7 @@ h1 {
   margin: 0;
 
   font-size: 21px;
+
   font-weight: bold;
 
   color: #f2f2f2;
@@ -146,8 +265,7 @@ h1 {
 .dashboard-category-item {
   padding: 14px 0;
 
-  border-bottom:
-    1px solid #3a3a3a;
+  border-bottom: 1px solid #3a3a3a;
 }
 
 
@@ -192,6 +310,11 @@ h1 {
 }
 
 
+.dashboard-empty {
+  color: #888888;
+}
+
+
 .progress-track {
   width: 100%;
 
@@ -216,13 +339,8 @@ h1 {
 }
 
 
-.dashboard-empty {
-  color: #888888;
-}
-
-
 /* ------------------------------------------ */
-/* Create Category Card */
+/* Create Category */
 /* ------------------------------------------ */
 
 .new-category-card {
@@ -231,6 +349,7 @@ h1 {
   border: 1px solid #3a3a3a;
 
   padding: 20px;
+
   border-radius: 12px;
 
   margin-bottom: 20px;
@@ -254,6 +373,7 @@ h1 {
   border: 1px solid #3a3a3a;
 
   padding: 20px;
+
   border-radius: 12px;
 
   margin-bottom: 16px;
@@ -274,102 +394,8 @@ h1 {
 
 .remaining {
   font-size: 20px;
+
   font-weight: bold;
-}
-
-
-/* ------------------------------------------ */
-/* Labels / Inputs */
-/* ------------------------------------------ */
-
-label {
-  display: block;
-
-  margin-top: 16px;
-  margin-bottom: 6px;
-
-  color: #cfcfcf;
-}
-
-
-input {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 12px;
-
-  margin-top: 6px;
-
-  font-size: 16px;
-
-  border-radius: 8px;
-
-  background: #1f1f1f;
-  color: #ffffff;
-
-  border: 1px solid #4a4a4a;
-}
-
-
-input::placeholder {
-  color: #8f8f8f;
-}
-
-
-input:focus {
-  outline: none;
-
-  border-color: #ff8c32;
-}
-
-
-/* ------------------------------------------ */
-/* Buttons */
-/* ------------------------------------------ */
-
-button {
-  width: 100%;
-
-  box-sizing: border-box;
-
-  padding: 12px;
-
-  margin-top: 12px;
-
-  font-size: 16px;
-  font-weight: bold;
-
-  border-radius: 8px;
-
-  border: none;
-
-  background: #ff8c32;
-  color: #111111;
-
-  cursor: pointer;
-}
-
-
-button:hover {
-  background: #ffa154;
-}
-
-
-/* Remove number arrows */
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-
-  margin: 0;
-}
-
-
-input[type="number"] {
-  -moz-appearance: textfield;
-
-  appearance: textfield;
 }
 
 
@@ -381,6 +407,7 @@ input[type="number"] {
   display: flex;
 
   justify-content: space-between;
+
   align-items: flex-start;
 
   gap: 12px;
@@ -437,7 +464,106 @@ input[type="number"] {
 
 
 /* ------------------------------------------ */
-/* Transaction History */
+/* Labels / Inputs */
+/* ------------------------------------------ */
+
+label {
+  display: block;
+
+  margin-top: 16px;
+
+  margin-bottom: 6px;
+
+  color: #cfcfcf;
+}
+
+
+input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  margin-top: 6px;
+
+  font-size: 16px;
+
+  border-radius: 8px;
+
+  background: #1f1f1f;
+
+  color: #ffffff;
+
+  border: 1px solid #4a4a4a;
+}
+
+
+input::placeholder {
+  color: #8f8f8f;
+}
+
+
+input:focus {
+  outline: none;
+
+  border-color: #ff8c32;
+}
+
+
+/* Remove number input arrows */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+
+  margin: 0;
+}
+
+
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  appearance: textfield;
+}
+
+
+/* ------------------------------------------ */
+/* Buttons */
+/* ------------------------------------------ */
+
+button {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  margin-top: 12px;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  border-radius: 8px;
+
+  border: none;
+
+  background: #ff8c32;
+
+  color: #111111;
+
+  cursor: pointer;
+}
+
+
+button:hover {
+  background: #ffa154;
+}
+
+
+/* ------------------------------------------ */
+/* Transaction History inside Categories */
 /* ------------------------------------------ */
 
 .transaction-history {
@@ -467,8 +593,7 @@ input[type="number"] {
 
   padding: 10px 0;
 
-  border-bottom:
-    1px solid #3a3a3a;
+  border-bottom: 1px solid #3a3a3a;
 }
 
 
@@ -567,134 +692,7 @@ input[type="number"] {
 
 
 /* ------------------------------------------ */
-/* Modal */
-/* ------------------------------------------ */
-
-.hidden {
-  display: none;
-}
-
-
-.modal-overlay {
-  position: fixed;
-
-  inset: 0;
-
-  background:
-    rgba(0, 0, 0, 0.72);
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 20px;
-
-  box-sizing: border-box;
-
-  z-index: 1000;
-}
-
-
-.modal {
-  width: 100%;
-
-  max-width: 420px;
-
-  background: #262626;
-
-  border: 1px solid #ff8c32;
-
-  border-radius: 14px;
-
-  padding: 22px;
-
-  box-sizing: border-box;
-}
-
-
-.modal h2 {
-  margin-top: 0;
-
-  color: #ff8c32;
-}
-
-
-.modal-message {
-  color: #cccccc;
-
-  line-height: 1.5;
-}
-
-
-.modal-actions {
-  display: flex;
-
-  gap: 10px;
-
-  margin-top: 20px;
-}
-
-
-.modal-actions button {
-  margin-top: 0;
-}
-
-
-.modal-cancel-button {
-  background: #444444;
-
-  color: #ffffff;
-}
-
-
-.modal-cancel-button:hover {
-  background: #555555;
-}
-
-
-.modal-confirm-button {
-  background: #ff8c32;
-
-  color: #111111;
-}
-
-
-.modal-confirm-button:hover {
-  background: #ffa154;
-}
-
-
-/* This must override modal-overlay display:flex */
-
-.modal-overlay.hidden {
-  display: none;
-}
-
-
-/* ------------------------------------------ */
-/* Mobile */
-/* ------------------------------------------ */
-
-@media (max-width: 500px) {
-
-  .dashboard-summary {
-    grid-template-columns: 1fr;
-  }
-
-
-  .dashboard-category-header {
-    flex-direction: column;
-  }
-
-
-  .dashboard-category-remaining {
-    white-space: normal;
-  }
-}
-
-/* ------------------------------------------ */
-/* History */
+/* Full History View */
 /* ------------------------------------------ */
 
 .history-card {
@@ -712,6 +710,7 @@ input[type="number"] {
   display: flex;
 
   justify-content: space-between;
+
   align-items: flex-start;
 
   gap: 15px;
@@ -870,9 +869,231 @@ input[type="number"] {
 }
 
 
-/* Mobile history layout */
+/* ------------------------------------------ */
+/* Settings */
+/* ------------------------------------------ */
+
+.settings-card {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  border-radius: 12px;
+
+  padding: 20px;
+}
+
+
+.settings-card h2 {
+  margin-top: 0;
+
+  color: #ff8c32;
+}
+
+
+.settings-description {
+  color: #aaaaaa;
+
+  margin-bottom: 24px;
+}
+
+
+.settings-section {
+  padding: 18px 0;
+
+  border-top: 1px solid #3a3a3a;
+}
+
+
+.settings-section:first-of-type {
+  border-top: none;
+
+  padding-top: 0;
+}
+
+
+.settings-section h3 {
+  margin-top: 0;
+
+  margin-bottom: 8px;
+}
+
+
+.settings-section p {
+  color: #aaaaaa;
+
+  line-height: 1.5;
+}
+
+
+.backup-file-input {
+  margin-top: 10px;
+
+  padding: 10px;
+}
+
+
+/* ------------------------------------------ */
+/* Over Budget Warning */
+/* ------------------------------------------ */
+
+.over-budget {
+  color: #ff4d4d !important;
+}
+
+
+.progress-bar.over-budget-bar,
+.overall-progress-bar.over-budget-bar {
+  background: #ff4d4d;
+}
+
+
+/* ------------------------------------------ */
+/* Modal */
+/* ------------------------------------------ */
+
+.hidden {
+  display: none;
+}
+
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, 0.72);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  z-index: 1000;
+}
+
+
+.modal {
+  width: 100%;
+
+  max-width: 420px;
+
+  background: #262626;
+
+  border: 1px solid #ff8c32;
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+}
+
+
+.modal h2 {
+  margin-top: 0;
+
+  color: #ff8c32;
+}
+
+
+.modal-message {
+  color: #cccccc;
+
+  line-height: 1.5;
+}
+
+
+.modal-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+
+.modal-actions button {
+  margin-top: 0;
+}
+
+
+.modal-cancel-button {
+  background: #444444;
+
+  color: #ffffff;
+}
+
+
+.modal-cancel-button:hover {
+  background: #555555;
+}
+
+
+.modal-confirm-button {
+  background: #ff8c32;
+
+  color: #111111;
+}
+
+
+.modal-confirm-button:hover {
+  background: #ffa154;
+}
+
+
+/* Important:
+   Prevent modal from being stuck visible */
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+
+/* ------------------------------------------ */
+/* Mobile */
+/* ------------------------------------------ */
 
 @media (max-width: 500px) {
+
+  .main-navigation {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+  }
+
+
+  .overall-budget-header {
+    flex-direction: column;
+  }
+
+
+  .small-action-button {
+    width: 100%;
+  }
+
+
+  .dashboard-category-header {
+    flex-direction: column;
+  }
+
+
+  .dashboard-category-remaining {
+    white-space: normal;
+  }
+
 
   .history-header {
     flex-direction: column;
@@ -887,122 +1108,5 @@ input[type="number"] {
   .history-right {
     align-items: flex-start;
   }
-}
 
-/* ------------------------------------------ */
-/* Overall Monthly Budget */
-/* ------------------------------------------ */
-
-.overall-budget-card {
-  background: #2a2a2a;
-
-  border: 1px solid #3a3a3a;
-
-  border-radius: 12px;
-
-  padding: 20px;
-
-  margin-bottom: 16px;
-}
-
-
-.overall-budget-header {
-  display: flex;
-
-  justify-content: space-between;
-  align-items: flex-start;
-
-  gap: 15px;
-}
-
-
-.overall-budget-label {
-  margin: 0 0 6px;
-
-  color: #aaaaaa;
-
-  font-size: 14px;
-}
-
-
-.overall-budget-amount {
-  margin: 0;
-
-  color: #f2f2f2;
-
-  font-size: 26px;
-
-  font-weight: bold;
-}
-
-
-.small-action-button {
-  width: auto;
-
-  margin: 0;
-
-  padding: 8px 12px;
-
-  font-size: 13px;
-
-  background: #444444;
-
-  color: #ffffff;
-
-  border: 1px solid #555555;
-}
-
-
-.small-action-button:hover {
-  background: #555555;
-}
-
-
-.overall-budget-details {
-  margin-top: 18px;
-
-  color: #bbbbbb;
-
-  line-height: 1.6;
-}
-
-
-.overall-progress-track {
-  width: 100%;
-
-  height: 12px;
-
-  margin-top: 14px;
-
-  overflow: hidden;
-
-  background: #1e1e1e;
-
-  border-radius: 999px;
-}
-
-
-.overall-progress-bar {
-  width: 0%;
-
-  height: 100%;
-
-  background: #ff8c32;
-
-  border-radius: 999px;
-
-  transition: width 0.2s ease;
-}
-
-
-@media (max-width: 500px) {
-
-  .overall-budget-header {
-    flex-direction: column;
-  }
-
-
-  .small-action-button {
-    width: 100%;
-  }
 }

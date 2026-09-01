@@ -3,8 +3,11 @@
 // ------------------------------------------
 
 let categories = JSON.parse(
-  localStorage.getItem("financeCategories")
+  localStorage.getItem(
+    "financeCategories"
+  )
 ) || [];
+
 
 let overallMonthlyBudget =
   Number(
@@ -19,108 +22,219 @@ let overallMonthlyBudget =
 // ------------------------------------------
 
 const categoryContainer =
-  document.getElementById("categoryContainer");
+  document.getElementById(
+    "categoryContainer"
+  );
+
 
 const categoryNameInput =
-  document.getElementById("categoryName");
+  document.getElementById(
+    "categoryName"
+  );
+
 
 const categoryDescriptionInput =
-  document.getElementById("categoryDescription");
+  document.getElementById(
+    "categoryDescription"
+  );
+
 
 const categoryBudgetInput =
-  document.getElementById("categoryBudget");
+  document.getElementById(
+    "categoryBudget"
+  );
+
 
 const createCategoryButton =
-  document.getElementById("createCategoryButton");
+  document.getElementById(
+    "createCategoryButton"
+  );
 
 
 // ------------------------------------------
-// Navigation
+// Navigation elements
 // ------------------------------------------
 
 const dashboardNavButton =
-  document.getElementById("dashboardNavButton");
+  document.getElementById(
+    "dashboardNavButton"
+  );
+
 
 const categoriesNavButton =
-  document.getElementById("categoriesNavButton");
+  document.getElementById(
+    "categoriesNavButton"
+  );
+
 
 const historyNavButton =
-  document.getElementById("historyNavButton");
+  document.getElementById(
+    "historyNavButton"
+  );
+
+
+const settingsNavButton =
+  document.getElementById(
+    "settingsNavButton"
+  );
+
 
 const dashboardView =
-  document.getElementById("dashboardView");
+  document.getElementById(
+    "dashboardView"
+  );
+
 
 const categoriesView =
-  document.getElementById("categoriesView");
+  document.getElementById(
+    "categoriesView"
+  );
+
 
 const historyView =
-  document.getElementById("historyView");
+  document.getElementById(
+    "historyView"
+  );
+
+
+const settingsView =
+  document.getElementById(
+    "settingsView"
+  );
 
 
 // ------------------------------------------
-// Dashboard
+// Dashboard elements
 // ------------------------------------------
 
 const totalBudgetDisplay =
-  document.getElementById("totalBudgetDisplay");
+  document.getElementById(
+    "totalBudgetDisplay"
+  );
+
 
 const totalSpentDisplay =
-  document.getElementById("totalSpentDisplay");
+  document.getElementById(
+    "totalSpentDisplay"
+  );
+
 
 const totalRemainingDisplay =
-  document.getElementById("totalRemainingDisplay");
+  document.getElementById(
+    "totalRemainingDisplay"
+  );
+
 
 const dashboardCategoryContainer =
-  document.getElementById("dashboardCategoryContainer");
+  document.getElementById(
+    "dashboardCategoryContainer"
+  );
+
 
 const overallBudgetAmount =
-  document.getElementById("overallBudgetAmount");
+  document.getElementById(
+    "overallBudgetAmount"
+  );
+
 
 const overallBudgetDetails =
-  document.getElementById("overallBudgetDetails");
+  document.getElementById(
+    "overallBudgetDetails"
+  );
+
 
 const overallProgressBar =
-  document.getElementById("overallProgressBar");
+  document.getElementById(
+    "overallProgressBar"
+  );
+
 
 const editOverallBudgetButton =
-  document.getElementById("editOverallBudgetButton");
+  document.getElementById(
+    "editOverallBudgetButton"
+  );
 
 
 // ------------------------------------------
-// History
+// History elements
 // ------------------------------------------
 
 const historyContainer =
-  document.getElementById("historyContainer");
+  document.getElementById(
+    "historyContainer"
+  );
+
 
 const historyTotal =
-  document.getElementById("historyTotal");
+  document.getElementById(
+    "historyTotal"
+  );
 
 
 // ------------------------------------------
-// Modal
+// Settings elements
+// ------------------------------------------
+
+const exportBackupButton =
+  document.getElementById(
+    "exportBackupButton"
+  );
+
+
+const importBackupButton =
+  document.getElementById(
+    "importBackupButton"
+  );
+
+
+const importBackupInput =
+  document.getElementById(
+    "importBackupInput"
+  );
+
+
+// ------------------------------------------
+// Modal elements
 // ------------------------------------------
 
 const modalOverlay =
-  document.getElementById("modalOverlay");
+  document.getElementById(
+    "modalOverlay"
+  );
+
 
 const modalTitle =
-  document.getElementById("modalTitle");
+  document.getElementById(
+    "modalTitle"
+  );
+
 
 const modalFields =
-  document.getElementById("modalFields");
+  document.getElementById(
+    "modalFields"
+  );
+
 
 const modalMessage =
-  document.getElementById("modalMessage");
+  document.getElementById(
+    "modalMessage"
+  );
+
 
 const modalCancelButton =
-  document.getElementById("modalCancelButton");
+  document.getElementById(
+    "modalCancelButton"
+  );
+
 
 const modalConfirmButton =
-  document.getElementById("modalConfirmButton");
+  document.getElementById(
+    "modalConfirmButton"
+  );
 
 
-let modalConfirmAction = null;
+let modalConfirmAction =
+  null;
 
 
 // ------------------------------------------
@@ -131,7 +245,9 @@ function saveCategories() {
 
   localStorage.setItem(
     "financeCategories",
-    JSON.stringify(categories)
+    JSON.stringify(
+      categories
+    )
   );
 }
 
@@ -149,23 +265,35 @@ function saveOverallBudget() {
 // Calculations
 // ------------------------------------------
 
-function calculateSpent(category) {
+function calculateSpent(
+  category
+) {
 
   return category.transactions.reduce(
-    function (total, transaction) {
+    function (
+      total,
+      transaction
+    ) {
 
-      return total + transaction.amount;
+      return (
+        total +
+        transaction.amount
+      );
     },
     0
   );
 }
 
 
-function calculateRemaining(category) {
+function calculateRemaining(
+  category
+) {
 
   return (
     category.budget -
-    calculateSpent(category)
+    calculateSpent(
+      category
+    )
   );
 }
 
@@ -180,11 +308,18 @@ function hideAllViews() {
     "hidden-view"
   );
 
+
   categoriesView.classList.add(
     "hidden-view"
   );
 
+
   historyView.classList.add(
+    "hidden-view"
+  );
+
+
+  settingsView.classList.add(
     "hidden-view"
   );
 
@@ -193,11 +328,18 @@ function hideAllViews() {
     "active"
   );
 
+
   categoriesNavButton.classList.remove(
     "active"
   );
 
+
   historyNavButton.classList.remove(
+    "active"
+  );
+
+
+  settingsNavButton.classList.remove(
     "active"
   );
 }
@@ -207,13 +349,16 @@ function showDashboard() {
 
   hideAllViews();
 
+
   dashboardView.classList.remove(
     "hidden-view"
   );
 
+
   dashboardNavButton.classList.add(
     "active"
   );
+
 
   renderDashboard();
 }
@@ -223,9 +368,11 @@ function showCategories() {
 
   hideAllViews();
 
+
   categoriesView.classList.remove(
     "hidden-view"
   );
+
 
   categoriesNavButton.classList.add(
     "active"
@@ -237,15 +384,34 @@ function showHistory() {
 
   hideAllViews();
 
+
   historyView.classList.remove(
     "hidden-view"
   );
+
 
   historyNavButton.classList.add(
     "active"
   );
 
+
   renderHistory();
+}
+
+
+function showSettings() {
+
+  hideAllViews();
+
+
+  settingsView.classList.remove(
+    "hidden-view"
+  );
+
+
+  settingsNavButton.classList.add(
+    "active"
+  );
 }
 
 
@@ -267,15 +433,24 @@ historyNavButton.addEventListener(
 );
 
 
+settingsNavButton.addEventListener(
+  "click",
+  showSettings
+);
+
+
 // ------------------------------------------
-// Dashboard rendering
+// Dashboard
 // ------------------------------------------
 
 function renderDashboard() {
 
-  let totalBudget = 0;
+  let totalBudget =
+    0;
 
-  let totalSpent = 0;
+
+  let totalSpent =
+    0;
 
 
   categories.forEach(
@@ -284,35 +459,47 @@ function renderDashboard() {
       totalBudget +=
         category.budget;
 
+
       totalSpent +=
-        calculateSpent(category);
+        calculateSpent(
+          category
+        );
     }
   );
 
 
   const totalRemaining =
-    totalBudget - totalSpent;
+    totalBudget -
+    totalSpent;
 
 
   totalBudgetDisplay.textContent =
     `$${totalBudget.toFixed(2)}`;
 
+
   totalSpentDisplay.textContent =
     `$${totalSpent.toFixed(2)}`;
+
 
   totalRemainingDisplay.textContent =
     `$${totalRemaining.toFixed(2)}`;
 
 
   // ------------------------------------------
-  // Overall monthly budget
+  // Overall Monthly Budget
   // ------------------------------------------
 
-  if (overallMonthlyBudget > 0) {
+  if (
+    overallMonthlyBudget > 0
+  ) {
 
     const overallRemaining =
       overallMonthlyBudget -
       totalSpent;
+
+
+    const isOverallOverBudget =
+      overallRemaining < 0;
 
 
     const percentageUsed =
@@ -344,6 +531,30 @@ function renderDashboard() {
     overallProgressBar.style.width =
       `${progressWidth}%`;
 
+
+    overallProgressBar
+      .classList
+      .toggle(
+        "over-budget-bar",
+        isOverallOverBudget
+      );
+
+
+    overallBudgetAmount
+      .classList
+      .toggle(
+        "over-budget",
+        isOverallOverBudget
+      );
+
+
+    overallBudgetDetails
+      .classList
+      .toggle(
+        "over-budget",
+        isOverallOverBudget
+      );
+
   } else {
 
     overallBudgetAmount.textContent =
@@ -356,24 +567,48 @@ function renderDashboard() {
 
     overallProgressBar.style.width =
       "0%";
+
+
+    overallProgressBar
+      .classList
+      .remove(
+        "over-budget-bar"
+      );
+
+
+    overallBudgetAmount
+      .classList
+      .remove(
+        "over-budget"
+      );
+
+
+    overallBudgetDetails
+      .classList
+      .remove(
+        "over-budget"
+      );
   }
 
 
   // ------------------------------------------
-  // Category summary
+  // Category Summary
   // ------------------------------------------
 
   dashboardCategoryContainer.innerHTML =
     "";
 
 
-  if (categories.length === 0) {
+  if (
+    categories.length === 0
+  ) {
 
     dashboardCategoryContainer.innerHTML = `
       <p class="dashboard-empty">
         No categories created yet.
       </p>
     `;
+
 
     return;
   }
@@ -383,16 +618,28 @@ function renderDashboard() {
     function (category) {
 
       const spent =
-        calculateSpent(category);
+        calculateSpent(
+          category
+        );
+
 
       const remaining =
-        calculateRemaining(category);
+        calculateRemaining(
+          category
+        );
 
 
-      let percentage = 0;
+      const isOverBudget =
+        remaining < 0;
 
 
-      if (category.budget > 0) {
+      let percentage =
+        0;
+
+
+      if (
+        category.budget > 0
+      ) {
 
         percentage =
           (
@@ -422,13 +669,21 @@ function renderDashboard() {
 
       summaryItem.innerHTML = `
 
-        <div class="dashboard-category-header">
+        <div
+          class="dashboard-category-header"
+        >
 
-          <p class="dashboard-category-name">
+          <p
+            class="dashboard-category-name"
+          >
             ${category.name}
           </p>
 
-          <p class="dashboard-category-remaining">
+
+          <p
+            class="dashboard-category-remaining
+            ${isOverBudget ? "over-budget" : ""}"
+          >
             $${remaining.toFixed(2)}
             remaining
           </p>
@@ -436,7 +691,9 @@ function renderDashboard() {
         </div>
 
 
-        <p class="dashboard-category-details">
+        <p
+          class="dashboard-category-details"
+        >
           $${spent.toFixed(2)}
           spent of
           $${category.budget.toFixed(2)}
@@ -446,7 +703,8 @@ function renderDashboard() {
         <div class="progress-track">
 
           <div
-            class="progress-bar"
+            class="progress-bar
+            ${isOverBudget ? "over-budget-bar" : ""}"
             style="width: ${progressWidth}%"
           ></div>
 
@@ -454,16 +712,17 @@ function renderDashboard() {
       `;
 
 
-      dashboardCategoryContainer.appendChild(
-        summaryItem
-      );
+      dashboardCategoryContainer
+        .appendChild(
+          summaryItem
+        );
     }
   );
 }
 
 
 // ------------------------------------------
-// Edit overall monthly budget
+// Edit Overall Monthly Budget
 // ------------------------------------------
 
 function editOverallBudget() {
@@ -473,16 +732,20 @@ function editOverallBudget() {
     title:
       "Overall Monthly Budget",
 
+
     fields: `
 
-      <label for="modalOverallBudget">
+      <label
+        for="modalOverallBudget"
+      >
         Monthly Spending Limit
       </label>
+
 
       <input
         type="number"
         id="modalOverallBudget"
-        placeholder="3000"
+        placeholder="Input monthly budget"
         step="0.01"
         min="0"
         value="${
@@ -493,8 +756,10 @@ function editOverallBudget() {
       >
     `,
 
+
     confirmText:
       "Save",
+
 
     onConfirm:
       function () {
@@ -512,7 +777,9 @@ function editOverallBudget() {
 
 
         if (
-          !Number.isFinite(budget) ||
+          !Number.isFinite(
+            budget
+          ) ||
           budget <= 0
         ) {
 
@@ -526,7 +793,9 @@ function editOverallBudget() {
 
         saveOverallBudget();
 
+
         closeModal();
+
 
         renderDashboard();
       }
@@ -534,43 +803,52 @@ function editOverallBudget() {
 }
 
 
-editOverallBudgetButton.addEventListener(
-  "click",
-  editOverallBudget
-);
+editOverallBudgetButton
+  .addEventListener(
+    "click",
+    editOverallBudget
+  );
 
 
 // ------------------------------------------
-// History rendering
+// History
 // ------------------------------------------
 
 function renderHistory() {
 
-  const allTransactions = [];
+  const allTransactions =
+    [];
 
 
   categories.forEach(
     function (category) {
 
       category.transactions.forEach(
-        function (transaction) {
+        function (
+          transaction
+        ) {
 
           allTransactions.push({
 
             categoryId:
               category.id,
 
+
             categoryName:
               category.name,
+
 
             transactionId:
               transaction.id,
 
+
             amount:
               transaction.amount,
 
+
             note:
               transaction.note,
+
 
             date:
               transaction.date
@@ -583,11 +861,18 @@ function renderHistory() {
 
 
   allTransactions.sort(
-    function (a, b) {
+    function (
+      a,
+      b
+    ) {
 
       return (
-        new Date(b.date) -
-        new Date(a.date)
+        new Date(
+          b.date
+        ) -
+        new Date(
+          a.date
+        )
       );
     }
   );
@@ -627,12 +912,15 @@ function renderHistory() {
       </p>
     `;
 
+
     return;
   }
 
 
   allTransactions.forEach(
-    function (transaction) {
+    function (
+      transaction
+    ) {
 
       const date =
         new Date(
@@ -669,9 +957,12 @@ function renderHistory() {
             ${note}
           </p>
 
+
           <p class="history-meta">
 
-            <span class="history-category">
+            <span
+              class="history-category"
+            >
               ${transaction.categoryName}
             </span>
 
@@ -714,9 +1005,10 @@ function renderHistory() {
       `;
 
 
-      historyContainer.appendChild(
-        item
-      );
+      historyContainer
+        .appendChild(
+          item
+        );
     }
   );
 
@@ -726,7 +1018,7 @@ function renderHistory() {
 
 
 // ------------------------------------------
-// History edit/delete listeners
+// History Button Listeners
 // ------------------------------------------
 
 function attachHistoryListeners() {
@@ -787,30 +1079,38 @@ function attachHistoryListeners() {
 
 
 // ------------------------------------------
-// Modal helpers
+// Modal Helpers
 // ------------------------------------------
 
-function openModal(options) {
+function openModal(
+  options
+) {
 
   modalTitle.textContent =
     options.title || "";
 
+
   modalFields.innerHTML =
     options.fields || "";
+
 
   modalMessage.textContent =
     options.message || "";
 
+
   modalConfirmButton.textContent =
     options.confirmText || "Save";
+
 
   modalConfirmAction =
     options.onConfirm || null;
 
 
-  modalOverlay.classList.remove(
-    "hidden"
-  );
+  modalOverlay
+    .classList
+    .remove(
+      "hidden"
+    );
 
 
   const firstInput =
@@ -819,7 +1119,9 @@ function openModal(options) {
     );
 
 
-  if (firstInput) {
+  if (
+    firstInput
+  ) {
 
     firstInput.focus();
   }
@@ -828,73 +1130,91 @@ function openModal(options) {
 
 function closeModal() {
 
-  modalOverlay.classList.add(
-    "hidden"
-  );
+  modalOverlay
+    .classList
+    .add(
+      "hidden"
+    );
+
 
   modalFields.innerHTML =
     "";
 
+
   modalMessage.textContent =
     "";
+
 
   modalConfirmAction =
     null;
 }
 
 
-modalCancelButton.addEventListener(
-  "click",
-  closeModal
-);
+modalCancelButton
+  .addEventListener(
+    "click",
+    closeModal
+  );
 
 
-modalConfirmButton.addEventListener(
-  "click",
-  function () {
+modalConfirmButton
+  .addEventListener(
+    "click",
+    function () {
 
-    if (modalConfirmAction) {
+      if (
+        modalConfirmAction
+      ) {
 
-      modalConfirmAction();
+        modalConfirmAction();
+      }
     }
-  }
-);
+  );
 
 
-modalOverlay.addEventListener(
-  "click",
-  function (event) {
-
-    if (
-      event.target ===
-      modalOverlay
+modalOverlay
+  .addEventListener(
+    "click",
+    function (
+      event
     ) {
 
-      closeModal();
+      if (
+        event.target ===
+        modalOverlay
+      ) {
+
+        closeModal();
+      }
     }
-  }
-);
+  );
 
 
-document.addEventListener(
-  "keydown",
-  function (event) {
-
-    if (
-      event.key === "Escape" &&
-      !modalOverlay
-        .classList
-        .contains("hidden")
+document
+  .addEventListener(
+    "keydown",
+    function (
+      event
     ) {
 
-      closeModal();
+      if (
+        event.key ===
+          "Escape" &&
+        !modalOverlay
+          .classList
+          .contains(
+            "hidden"
+          )
+      ) {
+
+        closeModal();
+      }
     }
-  }
-);
+  );
 
 
 // ------------------------------------------
-// Render categories
+// Render Categories
 // ------------------------------------------
 
 function renderCategories() {
@@ -904,12 +1224,18 @@ function renderCategories() {
 
 
   categories.forEach(
-    function (category) {
+    function (
+      category
+    ) {
 
       const remaining =
         calculateRemaining(
           category
         );
+
+
+      const isOverBudget =
+        remaining < 0;
 
 
       const card =
@@ -968,29 +1294,44 @@ function renderCategories() {
 
                 return `
 
-                  <div class="transaction-item">
+                  <div
+                    class="transaction-item"
+                  >
 
-                    <div class="transaction-info">
+                    <div
+                      class="transaction-info"
+                    >
 
-                      <p class="transaction-note-display">
+                      <p
+                        class="transaction-note-display"
+                      >
                         ${note}
                       </p>
 
-                      <p class="transaction-date">
+
+                      <p
+                        class="transaction-date"
+                      >
                         ${formattedDate}
                       </p>
 
                     </div>
 
 
-                    <div class="transaction-right">
+                    <div
+                      class="transaction-right"
+                    >
 
-                      <div class="transaction-amount">
+                      <div
+                        class="transaction-amount"
+                      >
                         -$${transaction.amount.toFixed(2)}
                       </div>
 
 
-                      <div class="transaction-actions">
+                      <div
+                        class="transaction-actions"
+                      >
 
                         <button
                           class="edit-transaction-button"
@@ -999,6 +1340,7 @@ function renderCategories() {
                         >
                           Edit
                         </button>
+
 
                         <button
                           class="delete-transaction-button"
@@ -1022,14 +1364,18 @@ function renderCategories() {
 
       card.innerHTML = `
 
-        <div class="category-header">
+        <div
+          class="category-header"
+        >
 
           <h2>
             ${category.name}
           </h2>
 
 
-          <div class="category-actions">
+          <div
+            class="category-actions"
+          >
 
             <button
               class="edit-category-button"
@@ -1062,7 +1408,10 @@ function renderCategories() {
         </p>
 
 
-        <p class="remaining">
+        <p
+          class="remaining
+          ${isOverBudget ? "over-budget" : ""}"
+        >
           Remaining:
           $${remaining.toFixed(2)}
         </p>
@@ -1108,7 +1457,9 @@ function renderCategories() {
         </button>
 
 
-        <div class="transaction-history">
+        <div
+          class="transaction-history"
+        >
 
           <h3>
             Recent Transactions
@@ -1120,9 +1471,10 @@ function renderCategories() {
       `;
 
 
-      categoryContainer.appendChild(
-        card
-      );
+      categoryContainer
+        .appendChild(
+          card
+        );
     }
   );
 
@@ -1145,7 +1497,7 @@ function renderCategories() {
 
 
 // ------------------------------------------
-// Add transaction
+// Add Transaction
 // ------------------------------------------
 
 function addTransaction(
@@ -1154,7 +1506,9 @@ function addTransaction(
 
   const category =
     categories.find(
-      function (category) {
+      function (
+        category
+      ) {
 
         return (
           category.id ===
@@ -1164,7 +1518,9 @@ function addTransaction(
     );
 
 
-  if (!category) {
+  if (
+    !category
+  ) {
 
     return;
   }
@@ -1190,7 +1546,9 @@ function addTransaction(
 
   if (
     transactionInput.value === "" ||
-    !Number.isFinite(amount) ||
+    !Number.isFinite(
+      amount
+    ) ||
     amount <= 0
   ) {
 
@@ -1203,11 +1561,14 @@ function addTransaction(
     id:
       Date.now(),
 
+
     amount:
       amount,
 
+
     note:
       noteInput.value.trim(),
+
 
     date:
       new Date()
@@ -1217,12 +1578,13 @@ function addTransaction(
 
   saveCategories();
 
+
   renderCategories();
 }
 
 
 // ------------------------------------------
-// Transaction listeners
+// Transaction Listeners
 // ------------------------------------------
 
 function attachTransactionListeners() {
@@ -1232,7 +1594,9 @@ function attachTransactionListeners() {
       ".transaction-button"
     )
     .forEach(
-      function (button) {
+      function (
+        button
+      ) {
 
         button.addEventListener(
           "click",
@@ -1254,14 +1618,19 @@ function attachTransactionListeners() {
       ".transaction-input"
     )
     .forEach(
-      function (input) {
+      function (
+        input
+      ) {
 
         input.addEventListener(
           "keydown",
-          function (event) {
+          function (
+            event
+          ) {
 
             if (
-              event.key === "Enter"
+              event.key ===
+              "Enter"
             ) {
 
               addTransaction(
@@ -1284,14 +1653,19 @@ function attachTransactionListeners() {
       ".transaction-note"
     )
     .forEach(
-      function (input) {
+      function (
+        input
+      ) {
 
         input.addEventListener(
           "keydown",
-          function (event) {
+          function (
+            event
+          ) {
 
             if (
-              event.key === "Enter"
+              event.key ===
+              "Enter"
             ) {
 
               addTransaction(
@@ -1311,7 +1685,7 @@ function attachTransactionListeners() {
 
 
 // ------------------------------------------
-// Edit transaction
+// Edit Transaction
 // ------------------------------------------
 
 function attachEditTransactionListeners() {
@@ -1321,7 +1695,9 @@ function attachEditTransactionListeners() {
       ".edit-transaction-button"
     )
     .forEach(
-      function (button) {
+      function (
+        button
+      ) {
 
         button.addEventListener(
           "click",
@@ -1351,7 +1727,9 @@ function editTransaction(
 
   const category =
     categories.find(
-      function (category) {
+      function (
+        category
+      ) {
 
         return (
           category.id ===
@@ -1361,7 +1739,9 @@ function editTransaction(
     );
 
 
-  if (!category) {
+  if (
+    !category
+  ) {
 
     return;
   }
@@ -1369,7 +1749,9 @@ function editTransaction(
 
   const transaction =
     category.transactions.find(
-      function (transaction) {
+      function (
+        transaction
+      ) {
 
         return (
           transaction.id ===
@@ -1379,7 +1761,9 @@ function editTransaction(
     );
 
 
-  if (!transaction) {
+  if (
+    !transaction
+  ) {
 
     return;
   }
@@ -1390,11 +1774,15 @@ function editTransaction(
     title:
       "Edit Transaction",
 
+
     fields: `
 
-      <label for="modalTransactionAmount">
+      <label
+        for="modalTransactionAmount"
+      >
         Transaction Amount
       </label>
+
 
       <input
         type="number"
@@ -1405,9 +1793,12 @@ function editTransaction(
       >
 
 
-      <label for="modalTransactionNote">
+      <label
+        for="modalTransactionNote"
+      >
         Description
       </label>
+
 
       <input
         type="text"
@@ -1416,8 +1807,10 @@ function editTransaction(
       >
     `,
 
+
     confirmText:
       "Save",
+
 
     onConfirm:
       function () {
@@ -1441,7 +1834,9 @@ function editTransaction(
 
 
         if (
-          !Number.isFinite(amount) ||
+          !Number.isFinite(
+            amount
+          ) ||
           amount <= 0
         ) {
 
@@ -1452,13 +1847,16 @@ function editTransaction(
         transaction.amount =
           amount;
 
+
         transaction.note =
           noteInput.value.trim();
 
 
         saveCategories();
 
+
         closeModal();
+
 
         renderCategories();
       }
@@ -1467,7 +1865,7 @@ function editTransaction(
 
 
 // ------------------------------------------
-// Delete transaction
+// Delete Transaction
 // ------------------------------------------
 
 function attachDeleteTransactionListeners() {
@@ -1477,7 +1875,9 @@ function attachDeleteTransactionListeners() {
       ".delete-transaction-button"
     )
     .forEach(
-      function (button) {
+      function (
+        button
+      ) {
 
         button.addEventListener(
           "click",
@@ -1507,7 +1907,9 @@ function deleteTransaction(
 
   const category =
     categories.find(
-      function (category) {
+      function (
+        category
+      ) {
 
         return (
           category.id ===
@@ -1517,7 +1919,9 @@ function deleteTransaction(
     );
 
 
-  if (!category) {
+  if (
+    !category
+  ) {
 
     return;
   }
@@ -1525,7 +1929,9 @@ function deleteTransaction(
 
   const transaction =
     category.transactions.find(
-      function (transaction) {
+      function (
+        transaction
+      ) {
 
         return (
           transaction.id ===
@@ -1535,7 +1941,9 @@ function deleteTransaction(
     );
 
 
-  if (!transaction) {
+  if (
+    !transaction
+  ) {
 
     return;
   }
@@ -1546,11 +1954,14 @@ function deleteTransaction(
     title:
       "Delete Transaction",
 
+
     message:
       `Delete the $${transaction.amount.toFixed(2)} transaction?`,
 
+
     confirmText:
       "Delete",
+
 
     onConfirm:
       function () {
@@ -1571,7 +1982,9 @@ function deleteTransaction(
 
         saveCategories();
 
+
         closeModal();
+
 
         renderCategories();
       }
@@ -1580,7 +1993,7 @@ function deleteTransaction(
 
 
 // ------------------------------------------
-// Edit category
+// Edit Category
 // ------------------------------------------
 
 function attachEditCategoryListeners() {
@@ -1590,7 +2003,9 @@ function attachEditCategoryListeners() {
       ".edit-category-button"
     )
     .forEach(
-      function (button) {
+      function (
+        button
+      ) {
 
         button.addEventListener(
           "click",
@@ -1614,7 +2029,9 @@ function editCategory(
 
   const category =
     categories.find(
-      function (category) {
+      function (
+        category
+      ) {
 
         return (
           category.id ===
@@ -1624,7 +2041,9 @@ function editCategory(
     );
 
 
-  if (!category) {
+  if (
+    !category
+  ) {
 
     return;
   }
@@ -1635,11 +2054,15 @@ function editCategory(
     title:
       "Edit Category",
 
+
     fields: `
 
-      <label for="modalCategoryName">
+      <label
+        for="modalCategoryName"
+      >
         Category Name
       </label>
+
 
       <input
         type="text"
@@ -1648,9 +2071,12 @@ function editCategory(
       >
 
 
-      <label for="modalCategoryDescription">
+      <label
+        for="modalCategoryDescription"
+      >
         Description
       </label>
+
 
       <input
         type="text"
@@ -1659,9 +2085,12 @@ function editCategory(
       >
 
 
-      <label for="modalCategoryBudget">
+      <label
+        for="modalCategoryBudget"
+      >
         Monthly Budget
       </label>
+
 
       <input
         type="number"
@@ -1672,8 +2101,10 @@ function editCategory(
       >
     `,
 
+
     confirmText:
       "Save",
+
 
     onConfirm:
       function () {
@@ -1708,7 +2139,9 @@ function editCategory(
 
         if (
           name === "" ||
-          !Number.isFinite(budget) ||
+          !Number.isFinite(
+            budget
+          ) ||
           budget <= 0
         ) {
 
@@ -1719,8 +2152,12 @@ function editCategory(
         category.name =
           name;
 
+
         category.description =
-          descriptionInput.value.trim();
+          descriptionInput
+            .value
+            .trim();
+
 
         category.budget =
           budget;
@@ -1728,7 +2165,9 @@ function editCategory(
 
         saveCategories();
 
+
         closeModal();
+
 
         renderCategories();
       }
@@ -1737,7 +2176,7 @@ function editCategory(
 
 
 // ------------------------------------------
-// Delete category
+// Delete Category
 // ------------------------------------------
 
 function attachDeleteCategoryListeners() {
@@ -1747,7 +2186,9 @@ function attachDeleteCategoryListeners() {
       ".delete-category-button"
     )
     .forEach(
-      function (button) {
+      function (
+        button
+      ) {
 
         button.addEventListener(
           "click",
@@ -1771,7 +2212,9 @@ function deleteCategory(
 
   const category =
     categories.find(
-      function (category) {
+      function (
+        category
+      ) {
 
         return (
           category.id ===
@@ -1781,7 +2224,9 @@ function deleteCategory(
     );
 
 
-  if (!category) {
+  if (
+    !category
+  ) {
 
     return;
   }
@@ -1796,12 +2241,15 @@ function deleteCategory(
     title:
       "Delete Category",
 
+
     message:
       `Delete "${category.name}"? ` +
       `This will also remove ${transactionCount} transaction(s).`,
 
+
     confirmText:
       "Delete",
+
 
     onConfirm:
       function () {
@@ -1822,7 +2270,9 @@ function deleteCategory(
 
         saveCategories();
 
+
         closeModal();
+
 
         renderCategories();
       }
@@ -1831,7 +2281,7 @@ function deleteCategory(
 
 
 // ------------------------------------------
-// Create category
+// Create Category
 // ------------------------------------------
 
 function createCategory() {
@@ -1857,7 +2307,9 @@ function createCategory() {
   if (
     name === "" ||
     categoryBudgetInput.value === "" ||
-    !Number.isFinite(budget) ||
+    !Number.isFinite(
+      budget
+    ) ||
     budget <= 0
   ) {
 
@@ -1870,14 +2322,18 @@ function createCategory() {
     id:
       Date.now(),
 
+
     name:
       name,
+
 
     description:
       description,
 
+
     budget:
       budget,
+
 
     transactions:
       []
@@ -1891,8 +2347,10 @@ function createCategory() {
   categoryNameInput.value =
     "";
 
+
   categoryDescriptionInput.value =
     "";
+
 
   categoryBudgetInput.value =
     "";
@@ -1902,28 +2360,293 @@ function createCategory() {
 }
 
 
-createCategoryButton.addEventListener(
-  "click",
-  createCategory
-);
+createCategoryButton
+  .addEventListener(
+    "click",
+    createCategory
+  );
 
 
-categoryBudgetInput.addEventListener(
-  "keydown",
-  function (event) {
-
-    if (
-      event.key === "Enter"
+categoryBudgetInput
+  .addEventListener(
+    "keydown",
+    function (
+      event
     ) {
 
-      createCategory();
+      if (
+        event.key ===
+        "Enter"
+      ) {
+
+        createCategory();
+      }
     }
-  }
-);
+  );
 
 
 // ------------------------------------------
-// Fix old transactions without IDs
+// Export Backup
+// ------------------------------------------
+
+function exportBackup() {
+
+  const backupData = {
+
+    version:
+      1,
+
+
+    exportDate:
+      new Date()
+        .toISOString(),
+
+
+    overallMonthlyBudget:
+      overallMonthlyBudget,
+
+
+    categories:
+      categories
+
+  };
+
+
+  const backupJSON =
+    JSON.stringify(
+      backupData,
+      null,
+      2
+    );
+
+
+  const blob =
+    new Blob(
+      [
+        backupJSON
+      ],
+      {
+        type:
+          "application/json"
+      }
+    );
+
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const link =
+    document.createElement(
+      "a"
+    );
+
+
+  const today =
+    new Date()
+      .toISOString()
+      .slice(
+        0,
+        10
+      );
+
+
+  link.href =
+    url;
+
+
+  link.download =
+    `finance-backup-${today}.json`;
+
+
+  document.body.appendChild(
+    link
+  );
+
+
+  link.click();
+
+
+  document.body.removeChild(
+    link
+  );
+
+
+  URL.revokeObjectURL(
+    url
+  );
+}
+
+
+exportBackupButton
+  .addEventListener(
+    "click",
+    exportBackup
+  );
+
+
+// ------------------------------------------
+// Import Backup
+// ------------------------------------------
+
+function importBackup() {
+
+  const file =
+    importBackupInput.files[0];
+
+
+  if (
+    !file
+  ) {
+
+    openModal({
+
+      title:
+        "Import Backup",
+
+
+      message:
+        "Please select a backup file first.",
+
+
+      confirmText:
+        "OK",
+
+
+      onConfirm:
+        closeModal
+
+    });
+
+
+    return;
+  }
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload =
+    function (
+      event
+    ) {
+
+      try {
+
+        const backupData =
+          JSON.parse(
+            event.target.result
+          );
+
+
+        // Basic validation
+
+        if (
+          !backupData ||
+          !Array.isArray(
+            backupData.categories
+          ) ||
+          typeof
+            backupData.overallMonthlyBudget !==
+            "number"
+        ) {
+
+          throw new Error(
+            "Invalid backup file"
+          );
+        }
+
+
+        openModal({
+
+          title:
+            "Import Backup",
+
+
+          message:
+            "Importing this backup will replace all current finance data on this device.",
+
+
+          confirmText:
+            "Import",
+
+
+          onConfirm:
+            function () {
+
+              categories =
+                backupData.categories;
+
+
+              overallMonthlyBudget =
+                backupData.overallMonthlyBudget;
+
+
+              saveCategories();
+
+
+              saveOverallBudget();
+
+
+              closeModal();
+
+
+              importBackupInput.value =
+                "";
+
+
+              renderCategories();
+
+
+              showDashboard();
+            }
+
+        });
+
+      } catch (
+        error
+      ) {
+
+        openModal({
+
+          title:
+            "Invalid Backup",
+
+
+          message:
+            "This file does not appear to be a valid Finance Tracker backup.",
+
+
+          confirmText:
+            "OK",
+
+
+          onConfirm:
+            closeModal
+
+        });
+      }
+    };
+
+
+  reader.readAsText(
+    file
+  );
+}
+
+
+importBackupButton
+  .addEventListener(
+    "click",
+    importBackup
+  );
+
+
+// ------------------------------------------
+// Fix Older Transactions Without IDs
 // ------------------------------------------
 
 let transactionsUpdated =
@@ -1931,14 +2654,18 @@ let transactionsUpdated =
 
 
 categories.forEach(
-  function (category) {
+  function (
+    category
+  ) {
 
     category.transactions.forEach(
       function (
         transaction
       ) {
 
-        if (!transaction.id) {
+        if (
+          !transaction.id
+        ) {
 
           transaction.id =
             Date.now() +
@@ -1957,16 +2684,19 @@ categories.forEach(
 );
 
 
-if (transactionsUpdated) {
+if (
+  transactionsUpdated
+) {
 
   saveCategories();
 }
 
 
 // ------------------------------------------
-// Initial render
+// Initial Render
 // ------------------------------------------
 
 renderCategories();
+
 
 showDashboard();

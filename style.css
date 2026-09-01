@@ -1,0 +1,1008 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+
+  background: #1b1b1b;
+  color: #f2f2f2;
+}
+
+
+.app {
+  max-width: 600px;
+
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+h1 {
+  margin-bottom: 18px;
+}
+
+
+/* ------------------------------------------ */
+/* Navigation */
+/* ------------------------------------------ */
+
+.main-navigation {
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 22px;
+
+  padding: 5px;
+
+  background: #252525;
+
+  border: 1px solid #383838;
+
+  border-radius: 10px;
+}
+
+
+.nav-button {
+  flex: 1;
+
+  margin: 0;
+
+  background: transparent;
+  color: #aaaaaa;
+
+  border: 1px solid transparent;
+}
+
+
+.nav-button:hover {
+  background: #333333;
+}
+
+
+.nav-button.active {
+  background: #ff8c32;
+
+  color: #111111;
+}
+
+
+/* ------------------------------------------ */
+/* Views */
+/* ------------------------------------------ */
+
+.app-view {
+  display: block;
+}
+
+
+.hidden-view {
+  display: none;
+}
+
+
+/* ------------------------------------------ */
+/* Dashboard */
+/* ------------------------------------------ */
+
+.dashboard-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+
+.summary-card {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  border-radius: 12px;
+
+  padding: 15px;
+}
+
+
+.summary-label {
+  margin: 0 0 8px;
+
+  font-size: 13px;
+
+  color: #aaaaaa;
+}
+
+
+.summary-value {
+  margin: 0;
+
+  font-size: 21px;
+  font-weight: bold;
+
+  color: #f2f2f2;
+}
+
+
+.dashboard-category-section {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  border-radius: 12px;
+
+  padding: 20px;
+}
+
+
+.dashboard-category-section h2 {
+  margin-top: 0;
+
+  color: #ff8c32;
+}
+
+
+.dashboard-category-item {
+  padding: 14px 0;
+
+  border-bottom:
+    1px solid #3a3a3a;
+}
+
+
+.dashboard-category-item:last-child {
+  border-bottom: none;
+}
+
+
+.dashboard-category-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+.dashboard-category-name {
+  margin: 0;
+
+  font-weight: bold;
+}
+
+
+.dashboard-category-remaining {
+  margin: 0;
+
+  color: #ff8c32;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+
+.dashboard-category-details {
+  margin: 6px 0 0;
+
+  color: #aaaaaa;
+
+  font-size: 14px;
+}
+
+
+.progress-track {
+  width: 100%;
+
+  height: 8px;
+
+  margin-top: 10px;
+
+  overflow: hidden;
+
+  background: #1e1e1e;
+
+  border-radius: 999px;
+}
+
+
+.progress-bar {
+  height: 100%;
+
+  background: #ff8c32;
+
+  border-radius: 999px;
+}
+
+
+.dashboard-empty {
+  color: #888888;
+}
+
+
+/* ------------------------------------------ */
+/* Create Category Card */
+/* ------------------------------------------ */
+
+.new-category-card {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  padding: 20px;
+  border-radius: 12px;
+
+  margin-bottom: 20px;
+}
+
+
+.new-category-card h2 {
+  margin-top: 0;
+
+  color: #ff8c32;
+}
+
+
+/* ------------------------------------------ */
+/* Category Cards */
+/* ------------------------------------------ */
+
+.category-card {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  padding: 20px;
+  border-radius: 12px;
+
+  margin-bottom: 16px;
+}
+
+
+.category-card h2 {
+  margin-top: 0;
+
+  color: #ff8c32;
+}
+
+
+.description {
+  color: #aaaaaa;
+}
+
+
+.remaining {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* ------------------------------------------ */
+/* Labels / Inputs */
+/* ------------------------------------------ */
+
+label {
+  display: block;
+
+  margin-top: 16px;
+  margin-bottom: 6px;
+
+  color: #cfcfcf;
+}
+
+
+input {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  margin-top: 6px;
+
+  font-size: 16px;
+
+  border-radius: 8px;
+
+  background: #1f1f1f;
+  color: #ffffff;
+
+  border: 1px solid #4a4a4a;
+}
+
+
+input::placeholder {
+  color: #8f8f8f;
+}
+
+
+input:focus {
+  outline: none;
+
+  border-color: #ff8c32;
+}
+
+
+/* ------------------------------------------ */
+/* Buttons */
+/* ------------------------------------------ */
+
+button {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px;
+
+  margin-top: 12px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  border-radius: 8px;
+
+  border: none;
+
+  background: #ff8c32;
+  color: #111111;
+
+  cursor: pointer;
+}
+
+
+button:hover {
+  background: #ffa154;
+}
+
+
+/* Remove number arrows */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+
+  margin: 0;
+}
+
+
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  appearance: textfield;
+}
+
+
+/* ------------------------------------------ */
+/* Category Header */
+/* ------------------------------------------ */
+
+.category-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 12px;
+}
+
+
+.category-header h2 {
+  margin-bottom: 0;
+}
+
+
+.category-actions {
+  display: flex;
+
+  gap: 6px;
+}
+
+
+.category-actions button {
+  width: auto;
+
+  margin: 0;
+
+  padding: 6px 10px;
+
+  font-size: 12px;
+}
+
+
+.edit-category-button {
+  background: #555555;
+
+  color: #ffffff;
+}
+
+
+.edit-category-button:hover {
+  background: #666666;
+}
+
+
+.delete-category-button {
+  background: #3a3a3a;
+
+  color: #ff8c32;
+
+  border: 1px solid #555555;
+}
+
+
+.delete-category-button:hover {
+  background: #4a4a4a;
+}
+
+
+/* ------------------------------------------ */
+/* Transaction History */
+/* ------------------------------------------ */
+
+.transaction-history {
+  margin-top: 20px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #444444;
+}
+
+
+.transaction-history h3 {
+  margin-top: 0;
+
+  font-size: 16px;
+
+  color: #cfcfcf;
+}
+
+
+.transaction-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 10px 0;
+
+  border-bottom:
+    1px solid #3a3a3a;
+}
+
+
+.transaction-info {
+  min-width: 0;
+}
+
+
+.transaction-note-display {
+  margin: 0;
+
+  color: #eeeeee;
+
+  word-wrap: break-word;
+}
+
+
+.transaction-date {
+  margin: 4px 0 0;
+
+  font-size: 12px;
+
+  color: #888888;
+}
+
+
+.transaction-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 8px;
+}
+
+
+.transaction-amount {
+  font-weight: bold;
+
+  color: #ff8c32;
+
+  white-space: nowrap;
+}
+
+
+.transaction-actions {
+  display: flex;
+
+  gap: 6px;
+}
+
+
+.transaction-actions button {
+  width: auto;
+
+  margin: 0;
+
+  padding: 6px 10px;
+
+  font-size: 12px;
+}
+
+
+.edit-transaction-button {
+  background: #555555;
+
+  color: #ffffff;
+}
+
+
+.edit-transaction-button:hover {
+  background: #666666;
+}
+
+
+.delete-transaction-button {
+  background: #3a3a3a;
+
+  color: #ff8c32;
+
+  border: 1px solid #555555;
+}
+
+
+.delete-transaction-button:hover {
+  background: #4a4a4a;
+}
+
+
+.no-transactions {
+  color: #888888;
+
+  font-size: 14px;
+}
+
+
+/* ------------------------------------------ */
+/* Modal */
+/* ------------------------------------------ */
+
+.hidden {
+  display: none;
+}
+
+
+.modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(0, 0, 0, 0.72);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  z-index: 1000;
+}
+
+
+.modal {
+  width: 100%;
+
+  max-width: 420px;
+
+  background: #262626;
+
+  border: 1px solid #ff8c32;
+
+  border-radius: 14px;
+
+  padding: 22px;
+
+  box-sizing: border-box;
+}
+
+
+.modal h2 {
+  margin-top: 0;
+
+  color: #ff8c32;
+}
+
+
+.modal-message {
+  color: #cccccc;
+
+  line-height: 1.5;
+}
+
+
+.modal-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+
+.modal-actions button {
+  margin-top: 0;
+}
+
+
+.modal-cancel-button {
+  background: #444444;
+
+  color: #ffffff;
+}
+
+
+.modal-cancel-button:hover {
+  background: #555555;
+}
+
+
+.modal-confirm-button {
+  background: #ff8c32;
+
+  color: #111111;
+}
+
+
+.modal-confirm-button:hover {
+  background: #ffa154;
+}
+
+
+/* This must override modal-overlay display:flex */
+
+.modal-overlay.hidden {
+  display: none;
+}
+
+
+/* ------------------------------------------ */
+/* Mobile */
+/* ------------------------------------------ */
+
+@media (max-width: 500px) {
+
+  .dashboard-summary {
+    grid-template-columns: 1fr;
+  }
+
+
+  .dashboard-category-header {
+    flex-direction: column;
+  }
+
+
+  .dashboard-category-remaining {
+    white-space: normal;
+  }
+}
+
+/* ------------------------------------------ */
+/* History */
+/* ------------------------------------------ */
+
+.history-card {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  border-radius: 12px;
+
+  padding: 20px;
+}
+
+
+.history-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid #444444;
+}
+
+
+.history-header h2 {
+  margin: 0;
+
+  color: #ff8c32;
+}
+
+
+.history-subtitle {
+  margin: 6px 0 0;
+
+  color: #888888;
+
+  font-size: 14px;
+}
+
+
+.history-total {
+  font-size: 20px;
+
+  font-weight: bold;
+
+  color: #ff8c32;
+
+  white-space: nowrap;
+}
+
+
+.history-item {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 16px 0;
+
+  border-bottom: 1px solid #3a3a3a;
+}
+
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+
+.history-info {
+  min-width: 0;
+
+  flex: 1;
+}
+
+
+.history-note {
+  margin: 0;
+
+  font-weight: bold;
+
+  color: #eeeeee;
+
+  word-wrap: break-word;
+}
+
+
+.history-meta {
+  margin: 5px 0 0;
+
+  font-size: 13px;
+
+  color: #888888;
+}
+
+
+.history-category {
+  color: #bbbbbb;
+}
+
+
+.history-right {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 8px;
+}
+
+
+.history-amount {
+  color: #ff8c32;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+
+.history-actions {
+  display: flex;
+
+  gap: 6px;
+}
+
+
+.history-actions button {
+  width: auto;
+
+  margin: 0;
+
+  padding: 6px 10px;
+
+  font-size: 12px;
+}
+
+
+.history-edit-button {
+  background: #555555;
+
+  color: #ffffff;
+}
+
+
+.history-edit-button:hover {
+  background: #666666;
+}
+
+
+.history-delete-button {
+  background: #3a3a3a;
+
+  color: #ff8c32;
+
+  border: 1px solid #555555;
+}
+
+
+.history-delete-button:hover {
+  background: #4a4a4a;
+}
+
+
+.history-empty {
+  margin: 20px 0 0;
+
+  color: #888888;
+}
+
+
+/* Mobile history layout */
+
+@media (max-width: 500px) {
+
+  .history-header {
+    flex-direction: column;
+  }
+
+
+  .history-item {
+    flex-direction: column;
+  }
+
+
+  .history-right {
+    align-items: flex-start;
+  }
+}
+
+/* ------------------------------------------ */
+/* Overall Monthly Budget */
+/* ------------------------------------------ */
+
+.overall-budget-card {
+  background: #2a2a2a;
+
+  border: 1px solid #3a3a3a;
+
+  border-radius: 12px;
+
+  padding: 20px;
+
+  margin-bottom: 16px;
+}
+
+
+.overall-budget-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 15px;
+}
+
+
+.overall-budget-label {
+  margin: 0 0 6px;
+
+  color: #aaaaaa;
+
+  font-size: 14px;
+}
+
+
+.overall-budget-amount {
+  margin: 0;
+
+  color: #f2f2f2;
+
+  font-size: 26px;
+
+  font-weight: bold;
+}
+
+
+.small-action-button {
+  width: auto;
+
+  margin: 0;
+
+  padding: 8px 12px;
+
+  font-size: 13px;
+
+  background: #444444;
+
+  color: #ffffff;
+
+  border: 1px solid #555555;
+}
+
+
+.small-action-button:hover {
+  background: #555555;
+}
+
+
+.overall-budget-details {
+  margin-top: 18px;
+
+  color: #bbbbbb;
+
+  line-height: 1.6;
+}
+
+
+.overall-progress-track {
+  width: 100%;
+
+  height: 12px;
+
+  margin-top: 14px;
+
+  overflow: hidden;
+
+  background: #1e1e1e;
+
+  border-radius: 999px;
+}
+
+
+.overall-progress-bar {
+  width: 0%;
+
+  height: 100%;
+
+  background: #ff8c32;
+
+  border-radius: 999px;
+
+  transition: width 0.2s ease;
+}
+
+
+@media (max-width: 500px) {
+
+  .overall-budget-header {
+    flex-direction: column;
+  }
+
+
+  .small-action-button {
+    width: 100%;
+  }
+}

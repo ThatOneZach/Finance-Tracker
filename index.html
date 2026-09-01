@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Finance Tracker</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app">
+
+    <h1>Finance Tracker</h1>
+
+    <!-- Navigation -->
+    <nav class="main-navigation">
+
+      <button
+        id="dashboardNavButton"
+        class="nav-button active"
+        type="button"
+      >
+        Dashboard
+      </button>
+
+      <button
+        id="categoriesNavButton"
+        class="nav-button"
+        type="button"
+      >
+        Categories
+      </button>
+
+      <button
+        id="historyNavButton"
+        class="nav-button"
+        type="button"
+      >
+        History
+      </button>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+    <section id="dashboardView" class="app-view">
+
+        <section class="overall-budget-card">
+
+  <div class="overall-budget-header">
+
+    <div>
+      <p class="overall-budget-label">
+        Overall Monthly Budget
+      </p>
+
+      <p
+        id="overallBudgetAmount"
+        class="overall-budget-amount"
+      >
+        Not Set
+      </p>
+    </div>
+
+    <button
+      id="editOverallBudgetButton"
+      class="small-action-button"
+      type="button"
+    >
+      Edit Budget
+    </button>
+
+  </div>
+
+
+  <div
+    id="overallBudgetDetails"
+    class="overall-budget-details"
+  >
+    Set your monthly budget to begin tracking.
+  </div>
+
+
+  <div class="overall-progress-track">
+
+    <div
+      id="overallProgressBar"
+      class="overall-progress-bar"
+    ></div>
+
+  </div>
+
+</section>
+
+      <section class="dashboard-summary">
+
+        <div class="summary-card">
+
+          <p class="summary-label">
+            Category Budgets
+          </p>
+
+          <p
+            id="totalBudgetDisplay"
+            class="summary-value"
+          >
+            $0.00
+          </p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+          <p class="summary-label">
+            Spent
+          </p>
+
+          <p
+            id="totalSpentDisplay"
+            class="summary-value"
+          >
+            $0.00
+          </p>
+
+        </div>
+
+
+        <div class="summary-card">
+
+          <p class="summary-label">
+            Remaining
+          </p>
+
+          <p
+            id="totalRemainingDisplay"
+            class="summary-value"
+          >
+            $0.00
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section class="dashboard-category-section">
+
+        <h2>Category Summary</h2>
+
+        <div id="dashboardCategoryContainer"></div>
+
+      </section>
+
+    </section>
+
+
+    <!-- Categories -->
+    <section
+      id="categoriesView"
+      class="app-view hidden-view"
+    >
+
+      <section class="new-category-card">
+
+        <h2>Create Category</h2>
+
+        <label for="categoryName">
+          Category Name
+        </label>
+
+        <input
+          type="text"
+          id="categoryName"
+          placeholder="Category name"
+        >
+
+
+        <label for="categoryDescription">
+          Description
+        </label>
+
+        <input
+          type="text"
+          id="categoryDescription"
+          placeholder="Category description"
+        >
+
+
+        <label for="categoryBudget">
+          Monthly Budget
+        </label>
+
+        <input
+          type="number"
+          id="categoryBudget"
+          placeholder="Budget amount"
+          step="0.01"
+          min="0"
+        >
+
+
+        <button id="createCategoryButton">
+          Create Category
+        </button>
+
+      </section>
+
+
+      <section id="categoryContainer"></section>
+
+    </section>
+
+
+    <!-- History -->
+    <section
+      id="historyView"
+      class="app-view hidden-view"
+    >
+
+      <section class="history-card">
+
+        <div class="history-header">
+
+          <div>
+            <h2>Transaction History</h2>
+
+            <p class="history-subtitle">
+              All transactions across your categories
+            </p>
+          </div>
+
+          <div
+            id="historyTotal"
+            class="history-total"
+          >
+            $0.00
+          </div>
+
+        </div>
+
+
+        <div id="historyContainer"></div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+
+  <!-- Reusable Modal -->
+
+  <div
+    id="modalOverlay"
+    class="modal-overlay hidden"
+  >
+
+    <div class="modal">
+
+      <h2 id="modalTitle">
+        Edit
+      </h2>
+
+      <div id="modalFields"></div>
+
+      <p
+        id="modalMessage"
+        class="modal-message"
+      ></p>
+
+
+      <div class="modal-actions">
+
+        <button
+          id="modalCancelButton"
+          class="modal-cancel-button"
+          type="button"
+        >
+          Cancel
+        </button>
+
+        <button
+          id="modalConfirmButton"
+          class="modal-confirm-button"
+          type="button"
+        >
+          Save
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>

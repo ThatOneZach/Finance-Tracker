@@ -15,6 +15,36 @@
     rel="stylesheet"
     href="style.css"
   >
+
+  <meta
+  name="theme-color"
+  content="#ff8c32"
+>
+
+<meta
+  name="apple-mobile-web-app-capable"
+  content="yes"
+>
+
+<meta
+  name="apple-mobile-web-app-status-bar-style"
+  content="black-translucent"
+>
+
+<meta
+  name="apple-mobile-web-app-title"
+  content="Finance Tracker"
+>
+
+<link
+  rel="manifest"
+  href="manifest.json"
+>
+
+<link
+  rel="apple-touch-icon"
+  href="icon-192.png"
+>
 </head>
 
 
@@ -24,10 +54,6 @@
 
     <h1>Finance Tracker</h1>
 
-
-    <!-- ---------------------------------- -->
-    <!-- Navigation -->
-    <!-- ---------------------------------- -->
 
     <nav class="main-navigation">
 
@@ -39,7 +65,6 @@
         Dashboard
       </button>
 
-
       <button
         id="categoriesNavButton"
         class="nav-button"
@@ -47,7 +72,6 @@
       >
         Categories
       </button>
-
 
       <button
         id="historyNavButton"
@@ -57,6 +81,13 @@
         History
       </button>
 
+      <button
+        id="pastMonthsNavButton"
+        class="nav-button"
+        type="button"
+      >
+        Past Months
+      </button>
 
       <button
         id="settingsNavButton"
@@ -69,16 +100,12 @@
     </nav>
 
 
-    <!-- ---------------------------------- -->
     <!-- Dashboard -->
-    <!-- ---------------------------------- -->
 
     <section
       id="dashboardView"
       class="app-view"
     >
-
-      <!-- Overall Monthly Budget -->
 
       <section class="overall-budget-card">
 
@@ -89,6 +116,11 @@
             <p class="overall-budget-label">
               Overall Monthly Budget
             </p>
+
+            <p
+              id="currentMonthLabel"
+              class="current-month-label"
+            ></p>
 
             <p
               id="overallBudgetAmount"
@@ -131,8 +163,6 @@
       </section>
 
 
-      <!-- Main totals -->
-
       <section class="dashboard-summary">
 
         <div class="summary-card">
@@ -154,7 +184,7 @@
         <div class="summary-card">
 
           <p class="summary-label">
-            Spent
+            Spent This Month
           </p>
 
           <p
@@ -185,8 +215,6 @@
       </section>
 
 
-      <!-- Category Summary -->
-
       <section class="dashboard-category-section">
 
         <h2>
@@ -202,16 +230,12 @@
     </section>
 
 
-    <!-- ---------------------------------- -->
     <!-- Categories -->
-    <!-- ---------------------------------- -->
 
     <section
       id="categoriesView"
       class="app-view hidden-view"
     >
-
-      <!-- Create Category -->
 
       <section class="new-category-card">
 
@@ -265,8 +289,6 @@
       </section>
 
 
-      <!-- Generated Categories -->
-
       <section
         id="categoryContainer"
       ></section>
@@ -274,9 +296,7 @@
     </section>
 
 
-    <!-- ---------------------------------- -->
-    <!-- History -->
-    <!-- ---------------------------------- -->
+    <!-- Current Month History -->
 
     <section
       id="historyView"
@@ -290,12 +310,13 @@
           <div>
 
             <h2>
-              Transaction History
+              Current Month
             </h2>
 
-            <p class="history-subtitle">
-              All transactions across your categories
-            </p>
+            <p
+              id="historyMonthLabel"
+              class="history-subtitle"
+            ></p>
 
           </div>
 
@@ -319,9 +340,66 @@
     </section>
 
 
-    <!-- ---------------------------------- -->
+    <!-- Past Months -->
+
+    <section
+      id="pastMonthsView"
+      class="app-view hidden-view"
+    >
+
+      <section class="past-months-card">
+
+        <div class="past-months-header">
+
+          <div>
+
+            <h2>
+              Past Months
+            </h2>
+
+            <p class="history-subtitle">
+              View previous monthly transaction statements.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <label for="pastMonthSelect">
+          Select Month
+        </label>
+
+        <select
+          id="pastMonthSelect"
+          class="month-select"
+        ></select>
+
+
+        <div
+          id="pastMonthSummary"
+          class="past-month-summary"
+        ></div>
+
+
+        <button
+          id="exportMonthButton"
+          type="button"
+        >
+          Export Selected Month
+        </button>
+
+
+        <div
+          id="pastMonthContainer"
+        ></div>
+
+      </section>
+
+    </section>
+
+
     <!-- Settings -->
-    <!-- ---------------------------------- -->
 
     <section
       id="settingsView"
@@ -339,8 +417,6 @@
         </p>
 
 
-        <!-- Export -->
-
         <div class="settings-section">
 
           <h3>
@@ -348,8 +424,8 @@
           </h3>
 
           <p>
-            Download your categories, transactions,
-            and overall monthly budget as a backup file.
+            Download all categories, transactions,
+            and your overall monthly budget.
           </p>
 
           <button
@@ -361,8 +437,6 @@
 
         </div>
 
-
-        <!-- Import -->
 
         <div class="settings-section">
 
@@ -398,9 +472,7 @@
   </main>
 
 
-  <!-- ------------------------------------ -->
-  <!-- Reusable Modal -->
-  <!-- ------------------------------------ -->
+  <!-- Modal -->
 
   <div
     id="modalOverlay"
@@ -413,17 +485,14 @@
         Edit
       </h2>
 
-
       <div
         id="modalFields"
       ></div>
-
 
       <p
         id="modalMessage"
         class="modal-message"
       ></p>
-
 
       <div class="modal-actions">
 
@@ -434,7 +503,6 @@
         >
           Cancel
         </button>
-
 
         <button
           id="modalConfirmButton"
@@ -452,6 +520,19 @@
 
 
   <script src="app.js"></script>
+
+  <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener(
+      "load",
+      function () {
+        navigator.serviceWorker.register(
+          "./service-worker.js"
+        );
+      }
+    );
+  }
+</script>
 
 </body>
 

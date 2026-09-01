@@ -1,131 +1,103 @@
-/* ------------------------------------------ */
-/* Main Page */
-/* ------------------------------------------ */
-
 body {
   font-family: Arial, sans-serif;
-
   margin: 0;
-
   background: #1b1b1b;
   color: #f2f2f2;
 }
 
-
 .app {
   max-width: 600px;
-
   margin: 0 auto;
-
   padding: 20px;
 }
-
 
 h1 {
   margin-bottom: 18px;
 }
 
 
-/* ------------------------------------------ */
 /* Navigation */
-/* ------------------------------------------ */
 
 .main-navigation {
   display: flex;
-
+  flex-wrap: wrap;
   gap: 8px;
-
   margin-bottom: 22px;
-
   padding: 5px;
 
   background: #252525;
-
   border: 1px solid #383838;
-
   border-radius: 10px;
 }
 
-
 .nav-button {
   flex: 1;
+  min-width: 90px;
 
   margin: 0;
+  padding: 10px 8px;
 
   background: transparent;
-
   color: #aaaaaa;
 
   border: 1px solid transparent;
 
-  padding: 10px 8px;
-
   font-size: 14px;
 }
-
 
 .nav-button:hover {
   background: #333333;
 }
 
-
 .nav-button.active {
   background: #ff8c32;
-
   color: #111111;
 }
 
 
-/* ------------------------------------------ */
 /* Views */
-/* ------------------------------------------ */
 
 .app-view {
   display: block;
 }
-
 
 .hidden-view {
   display: none;
 }
 
 
-/* ------------------------------------------ */
-/* Overall Monthly Budget */
-/* ------------------------------------------ */
+/* Overall Budget */
 
 .overall-budget-card {
   background: #2a2a2a;
-
   border: 1px solid #3a3a3a;
-
   border-radius: 12px;
 
   padding: 20px;
-
   margin-bottom: 16px;
 }
 
-
 .overall-budget-header {
   display: flex;
-
   justify-content: space-between;
-
   align-items: flex-start;
 
   gap: 15px;
 }
 
-
 .overall-budget-label {
-  margin: 0 0 6px;
+  margin: 0 0 4px;
 
   color: #aaaaaa;
-
   font-size: 14px;
 }
 
+.current-month-label {
+  margin: 0 0 8px;
+
+  color: #ff8c32;
+  font-size: 13px;
+}
 
 .overall-budget-amount {
   margin: 0;
@@ -133,10 +105,8 @@ h1 {
   color: #f2f2f2;
 
   font-size: 26px;
-
   font-weight: bold;
 }
-
 
 .overall-budget-details {
   margin-top: 18px;
@@ -146,10 +116,8 @@ h1 {
   line-height: 1.6;
 }
 
-
 .overall-progress-track {
   width: 100%;
-
   height: 12px;
 
   margin-top: 14px;
@@ -161,10 +129,8 @@ h1 {
   border-radius: 999px;
 }
 
-
 .overall-progress-bar {
   width: 0%;
-
   height: 100%;
 
   background: #ff8c32;
@@ -174,32 +140,26 @@ h1 {
   transition: width 0.2s ease;
 }
 
-
 .small-action-button {
   width: auto;
 
   margin: 0;
-
   padding: 8px 12px;
 
   font-size: 13px;
 
   background: #444444;
-
   color: #ffffff;
 
   border: 1px solid #555555;
 }
-
 
 .small-action-button:hover {
   background: #555555;
 }
 
 
-/* ------------------------------------------ */
 /* Dashboard */
-/* ------------------------------------------ */
 
 .dashboard-summary {
   display: grid;
@@ -212,17 +172,13 @@ h1 {
   margin-bottom: 20px;
 }
 
-
 .summary-card {
   background: #2a2a2a;
-
   border: 1px solid #3a3a3a;
-
   border-radius: 12px;
 
   padding: 15px;
 }
-
 
 .summary-label {
   margin: 0 0 8px;
@@ -232,17 +188,14 @@ h1 {
   color: #aaaaaa;
 }
 
-
 .summary-value {
   margin: 0;
 
   font-size: 21px;
-
   font-weight: bold;
 
   color: #f2f2f2;
 }
-
 
 .dashboard-category-section {
   background: #2a2a2a;
@@ -254,13 +207,11 @@ h1 {
   padding: 20px;
 }
 
-
 .dashboard-category-section h2 {
   margin-top: 0;
 
   color: #ff8c32;
 }
-
 
 .dashboard-category-item {
   padding: 14px 0;
@@ -268,11 +219,9 @@ h1 {
   border-bottom: 1px solid #3a3a3a;
 }
 
-
 .dashboard-category-item:last-child {
   border-bottom: none;
 }
-
 
 .dashboard-category-header {
   display: flex;
@@ -282,13 +231,11 @@ h1 {
   gap: 10px;
 }
 
-
 .dashboard-category-name {
   margin: 0;
 
   font-weight: bold;
 }
-
 
 .dashboard-category-remaining {
   margin: 0;
@@ -300,7 +247,6 @@ h1 {
   white-space: nowrap;
 }
 
-
 .dashboard-category-details {
   margin: 6px 0 0;
 
@@ -309,15 +255,12 @@ h1 {
   font-size: 14px;
 }
 
-
 .dashboard-empty {
   color: #888888;
 }
 
-
 .progress-track {
   width: 100%;
-
   height: 8px;
 
   margin-top: 10px;
@@ -329,7 +272,6 @@ h1 {
   border-radius: 999px;
 }
 
-
 .progress-bar {
   height: 100%;
 
@@ -339,9 +281,7 @@ h1 {
 }
 
 
-/* ------------------------------------------ */
 /* Create Category */
-/* ------------------------------------------ */
 
 .new-category-card {
   background: #2a2a2a;
@@ -355,7 +295,6 @@ h1 {
   margin-bottom: 20px;
 }
 
-
 .new-category-card h2 {
   margin-top: 0;
 
@@ -363,9 +302,7 @@ h1 {
 }
 
 
-/* ------------------------------------------ */
 /* Category Cards */
-/* ------------------------------------------ */
 
 .category-card {
   background: #2a2a2a;
@@ -379,29 +316,21 @@ h1 {
   margin-bottom: 16px;
 }
 
-
 .category-card h2 {
   margin-top: 0;
 
   color: #ff8c32;
 }
 
-
 .description {
   color: #aaaaaa;
 }
-
 
 .remaining {
   font-size: 20px;
 
   font-weight: bold;
 }
-
-
-/* ------------------------------------------ */
-/* Category Header */
-/* ------------------------------------------ */
 
 .category-header {
   display: flex;
@@ -413,18 +342,15 @@ h1 {
   gap: 12px;
 }
 
-
 .category-header h2 {
   margin-bottom: 0;
 }
-
 
 .category-actions {
   display: flex;
 
   gap: 6px;
 }
-
 
 .category-actions button {
   width: auto;
@@ -436,18 +362,15 @@ h1 {
   font-size: 12px;
 }
 
-
 .edit-category-button {
   background: #555555;
 
   color: #ffffff;
 }
 
-
 .edit-category-button:hover {
   background: #666666;
 }
-
 
 .delete-category-button {
   background: #3a3a3a;
@@ -457,15 +380,12 @@ h1 {
   border: 1px solid #555555;
 }
 
-
 .delete-category-button:hover {
   background: #4a4a4a;
 }
 
 
-/* ------------------------------------------ */
-/* Labels / Inputs */
-/* ------------------------------------------ */
+/* Inputs */
 
 label {
   display: block;
@@ -477,8 +397,8 @@ label {
   color: #cfcfcf;
 }
 
-
-input {
+input,
+select {
   width: 100%;
 
   box-sizing: border-box;
@@ -498,20 +418,20 @@ input {
   border: 1px solid #4a4a4a;
 }
 
+select {
+  cursor: pointer;
+}
 
 input::placeholder {
   color: #8f8f8f;
 }
 
-
-input:focus {
+input:focus,
+select:focus {
   outline: none;
 
   border-color: #ff8c32;
 }
-
-
-/* Remove number input arrows */
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -520,7 +440,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-
 input[type="number"] {
   -moz-appearance: textfield;
 
@@ -528,9 +447,7 @@ input[type="number"] {
 }
 
 
-/* ------------------------------------------ */
 /* Buttons */
-/* ------------------------------------------ */
 
 button {
   width: 100%;
@@ -542,7 +459,6 @@ button {
   margin-top: 12px;
 
   font-size: 16px;
-
   font-weight: bold;
 
   border-radius: 8px;
@@ -550,21 +466,17 @@ button {
   border: none;
 
   background: #ff8c32;
-
   color: #111111;
 
   cursor: pointer;
 }
-
 
 button:hover {
   background: #ffa154;
 }
 
 
-/* ------------------------------------------ */
-/* Transaction History inside Categories */
-/* ------------------------------------------ */
+/* Category Transaction History */
 
 .transaction-history {
   margin-top: 20px;
@@ -574,15 +486,53 @@ button:hover {
   border-top: 1px solid #444444;
 }
 
+.transaction-history-header {
+  display: flex;
 
-.transaction-history h3 {
-  margin-top: 0;
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 10px;
+}
+
+.transaction-history-header h3 {
+  margin: 0;
 
   font-size: 16px;
 
   color: #cfcfcf;
 }
 
+.transaction-collapse-button {
+  width: auto;
+
+  margin: 0;
+
+  padding: 6px 10px;
+
+  background: #3a3a3a;
+
+  color: #ff8c32;
+
+  border: 1px solid #555555;
+
+  font-size: 12px;
+}
+
+.transaction-collapse-button:hover {
+  background: #4a4a4a;
+}
+
+.transaction-history-list {
+  display: block;
+}
+
+.transaction-history-list.collapsed {
+  display: none;
+}
 
 .transaction-item {
   display: flex;
@@ -596,11 +546,9 @@ button:hover {
   border-bottom: 1px solid #3a3a3a;
 }
 
-
 .transaction-info {
   min-width: 0;
 }
-
 
 .transaction-note-display {
   margin: 0;
@@ -610,7 +558,6 @@ button:hover {
   word-wrap: break-word;
 }
 
-
 .transaction-date {
   margin: 4px 0 0;
 
@@ -618,7 +565,6 @@ button:hover {
 
   color: #888888;
 }
-
 
 .transaction-right {
   display: flex;
@@ -630,7 +576,6 @@ button:hover {
   gap: 8px;
 }
 
-
 .transaction-amount {
   font-weight: bold;
 
@@ -639,13 +584,11 @@ button:hover {
   white-space: nowrap;
 }
 
-
 .transaction-actions {
   display: flex;
 
   gap: 6px;
 }
-
 
 .transaction-actions button {
   width: auto;
@@ -657,18 +600,11 @@ button:hover {
   font-size: 12px;
 }
 
-
 .edit-transaction-button {
   background: #555555;
 
   color: #ffffff;
 }
-
-
-.edit-transaction-button:hover {
-  background: #666666;
-}
-
 
 .delete-transaction-button {
   background: #3a3a3a;
@@ -678,12 +614,6 @@ button:hover {
   border: 1px solid #555555;
 }
 
-
-.delete-transaction-button:hover {
-  background: #4a4a4a;
-}
-
-
 .no-transactions {
   color: #888888;
 
@@ -691,11 +621,10 @@ button:hover {
 }
 
 
-/* ------------------------------------------ */
-/* Full History View */
-/* ------------------------------------------ */
+/* History */
 
-.history-card {
+.history-card,
+.past-months-card {
   background: #2a2a2a;
 
   border: 1px solid #3a3a3a;
@@ -705,8 +634,8 @@ button:hover {
   padding: 20px;
 }
 
-
-.history-header {
+.history-header,
+.past-months-header {
   display: flex;
 
   justify-content: space-between;
@@ -720,13 +649,12 @@ button:hover {
   border-bottom: 1px solid #444444;
 }
 
-
-.history-header h2 {
+.history-header h2,
+.past-months-header h2 {
   margin: 0;
 
   color: #ff8c32;
 }
-
 
 .history-subtitle {
   margin: 6px 0 0;
@@ -735,7 +663,6 @@ button:hover {
 
   font-size: 14px;
 }
-
 
 .history-total {
   font-size: 20px;
@@ -746,7 +673,6 @@ button:hover {
 
   white-space: nowrap;
 }
-
 
 .history-item {
   display: flex;
@@ -760,18 +686,15 @@ button:hover {
   border-bottom: 1px solid #3a3a3a;
 }
 
-
 .history-item:last-child {
   border-bottom: none;
 }
-
 
 .history-info {
   min-width: 0;
 
   flex: 1;
 }
-
 
 .history-note {
   margin: 0;
@@ -783,7 +706,6 @@ button:hover {
   word-wrap: break-word;
 }
 
-
 .history-meta {
   margin: 5px 0 0;
 
@@ -792,11 +714,9 @@ button:hover {
   color: #888888;
 }
 
-
 .history-category {
   color: #bbbbbb;
 }
-
 
 .history-right {
   display: flex;
@@ -808,7 +728,6 @@ button:hover {
   gap: 8px;
 }
 
-
 .history-amount {
   color: #ff8c32;
 
@@ -817,13 +736,11 @@ button:hover {
   white-space: nowrap;
 }
 
-
 .history-actions {
   display: flex;
 
   gap: 6px;
 }
-
 
 .history-actions button {
   width: auto;
@@ -835,18 +752,11 @@ button:hover {
   font-size: 12px;
 }
 
-
 .history-edit-button {
   background: #555555;
 
   color: #ffffff;
 }
-
-
-.history-edit-button:hover {
-  background: #666666;
-}
-
 
 .history-delete-button {
   background: #3a3a3a;
@@ -856,12 +766,6 @@ button:hover {
   border: 1px solid #555555;
 }
 
-
-.history-delete-button:hover {
-  background: #4a4a4a;
-}
-
-
 .history-empty {
   margin: 20px 0 0;
 
@@ -869,9 +773,38 @@ button:hover {
 }
 
 
-/* ------------------------------------------ */
+/* Past Months */
+
+.month-select {
+  margin-bottom: 15px;
+}
+
+.past-month-summary {
+  margin-top: 18px;
+  margin-bottom: 6px;
+
+  padding: 14px;
+
+  background: #202020;
+
+  border: 1px solid #3a3a3a;
+  border-radius: 8px;
+}
+
+.past-month-summary h3 {
+  margin: 0 0 6px;
+
+  color: #ff8c32;
+}
+
+.past-month-summary p {
+  margin: 4px 0;
+
+  color: #bbbbbb;
+}
+
+
 /* Settings */
-/* ------------------------------------------ */
 
 .settings-card {
   background: #2a2a2a;
@@ -883,13 +816,11 @@ button:hover {
   padding: 20px;
 }
 
-
 .settings-card h2 {
   margin-top: 0;
 
   color: #ff8c32;
 }
-
 
 .settings-description {
   color: #aaaaaa;
@@ -897,13 +828,11 @@ button:hover {
   margin-bottom: 24px;
 }
 
-
 .settings-section {
   padding: 18px 0;
 
   border-top: 1px solid #3a3a3a;
 }
-
 
 .settings-section:first-of-type {
   border-top: none;
@@ -911,20 +840,17 @@ button:hover {
   padding-top: 0;
 }
 
-
 .settings-section h3 {
   margin-top: 0;
 
   margin-bottom: 8px;
 }
 
-
 .settings-section p {
   color: #aaaaaa;
 
   line-height: 1.5;
 }
-
 
 .backup-file-input {
   margin-top: 10px;
@@ -933,14 +859,11 @@ button:hover {
 }
 
 
-/* ------------------------------------------ */
-/* Over Budget Warning */
-/* ------------------------------------------ */
+/* Over Budget */
 
 .over-budget {
   color: #ff4d4d !important;
 }
-
 
 .progress-bar.over-budget-bar,
 .overall-progress-bar.over-budget-bar {
@@ -948,14 +871,11 @@ button:hover {
 }
 
 
-/* ------------------------------------------ */
 /* Modal */
-/* ------------------------------------------ */
 
 .hidden {
   display: none;
 }
-
 
 .modal-overlay {
   position: fixed;
@@ -978,7 +898,6 @@ button:hover {
   z-index: 1000;
 }
 
-
 .modal {
   width: 100%;
 
@@ -995,20 +914,17 @@ button:hover {
   box-sizing: border-box;
 }
 
-
 .modal h2 {
   margin-top: 0;
 
   color: #ff8c32;
 }
 
-
 .modal-message {
   color: #cccccc;
 
   line-height: 1.5;
 }
-
 
 .modal-actions {
   display: flex;
@@ -1018,11 +934,9 @@ button:hover {
   margin-top: 20px;
 }
 
-
 .modal-actions button {
   margin-top: 0;
 }
-
 
 .modal-cancel-button {
   background: #444444;
@@ -1030,35 +944,18 @@ button:hover {
   color: #ffffff;
 }
 
-
-.modal-cancel-button:hover {
-  background: #555555;
-}
-
-
 .modal-confirm-button {
   background: #ff8c32;
 
   color: #111111;
 }
 
-
-.modal-confirm-button:hover {
-  background: #ffa154;
-}
-
-
-/* Important:
-   Prevent modal from being stuck visible */
-
 .modal-overlay.hidden {
   display: none;
 }
 
 
-/* ------------------------------------------ */
 /* Mobile */
-/* ------------------------------------------ */
 
 @media (max-width: 500px) {
 
@@ -1069,41 +966,33 @@ button:hover {
       repeat(2, 1fr);
   }
 
-
   .dashboard-summary {
     grid-template-columns: 1fr;
   }
-
 
   .overall-budget-header {
     flex-direction: column;
   }
 
-
   .small-action-button {
     width: 100%;
   }
-
 
   .dashboard-category-header {
     flex-direction: column;
   }
 
-
   .dashboard-category-remaining {
     white-space: normal;
   }
-
 
   .history-header {
     flex-direction: column;
   }
 
-
   .history-item {
     flex-direction: column;
   }
-
 
   .history-right {
     align-items: flex-start;
